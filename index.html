@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+
+
+	<script type="text/javascript">
+		const timestamp = new Date().getTime();
+const metaElement = document.createElement('link');
+metaElement.setAttribute('rel', 'stylesheet');
+metaElement.setAttribute('type', 'text/css');
+metaElement.setAttribute('href', `style.css?v=${timestamp}`);
+
+const script_tag=document.createElement('script');
+script_tag.setAttribute('defer','')
+script_tag.setAttribute('type','text/javascript')
+script_tag.setAttribute('src',`java.js?v=${timestamp}`)
+
+const headElement = document.querySelector('head');
+headElement.appendChild(script_tag);
+headElement.appendChild(metaElement);
+	</script>
+</head>
+<body>
+<div class="body"></div>
+<div  class="menu_bar" id="container">
+		<div class="img">
+		 <img src="image/OBITO FF 2.jpeg" />
+		 <div class="menu">
+		 	<a class="active" href="#">Android & IOS</a>
+		 	<a href="pc/index.html">PC</a>
+		 	<a href="#">Contact Us</a> 	
+		 </div>
+		 </div>
+</div>
+<div class="container">
+<div class="pro_container"> 
+</div>
+</div>
+</div>
+</body>
+</html>
