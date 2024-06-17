@@ -17,6 +17,18 @@ box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 25
 
 }
 
+.span_con{
+font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+	position: relative;
+	bottom: 8px;
+	text-align: center;
+	padding: 5px;
+}
+.span_con a{
+	color: #48ff20;
+}
 .menu{
 
 

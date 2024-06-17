@@ -1,14 +1,14 @@
 const data = [
-    {imgsrc: 'image/p1.jpeg',features: ['• Drag Headshot','• One Time Apply','• Unable To By(By Checking)','• Fully AI Control','• 100% No Ban Issue(Even Patch)','• Android & IOS']},
-    {imgsrc: 'image/p5.jpg',features: ['• DRAG AIMBOT','• HEADLOCK','• AIMFOV','• MACRO AIMBOT','• MACRO AIMBOT','• 100% RANK PUSH PANEL','• NO RECOIL','• NO BACKLIST']},
+    { imgsrc: 'image/p1.jpeg',Video:'video/mod_view.mp4',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
+    {imgsrc: 'image/p5.jpg',Video:'video/p2.mp4',features: ['• DRAG AIMBOT','• HEADLOCK','• AIMFOV','• MACRO AIMBOT','• MACRO AIMBOT','• 100% RANK PUSH PANEL','• NO RECOIL','• NO BACKLIST']},
     {imgsrc: 'image/p3.png',features: ['• SENSI-UPGRADE','• PREMIUM-SETEDIT','• Movement_Speed_Smooth','• Less Recoil Regedit','• PREMIUM APPS','* X,Y Fileds']},
     {imgsrc: 'image/p4.png',features: ['• Drag Headshot 3.0 ','• One Time Apply','• Unable To By(By Checking)','• Fully AI Control','• 100% No Ban Issue(Even Patch)','• Android & IOS']},
     {imgsrc: 'image/op.jpg',features: ['* Custom Regedit','* Emulators','* FPS lock upto 160','* Less Recoil Regedit','* Premium Tweaks','* X,Y Fileds']},
     {imgsrc: 'image/p5.jpg',features: ['* Custom Regedit','* Emulators','* FPS lock upto 160','* Less Recoil Regedit','* Premium Tweaks','* X,Y Fileds']},
-   ] 
+    ]
 
  
-function addProduct(src,featureTexts) {
+function addProduct(src,featureTexts,Video) {
 	
 	const details=`
 Hi,
@@ -19,48 +19,48 @@ I Need a Product From You👇
 *Link* : ${window.location.hostname+'/product/'+src}
 `	
 const url="https://api.whatsapp.com/send?phone=9345916715&text="+encodeURIComponent(details)
-	
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.classList.add('hidden');
-
-
             const imageDiv = document.createElement('div');
             imageDiv.classList.add('image');
             const img = document.createElement('img');
             img.src = src;
             imageDiv.appendChild(img);
-
             const featuresList = document.createElement('li');
             featuresList.classList.add('features');
             featuresList.textContent = 'Features:';
-           
-
-
             featureTexts.forEach(text => {
                 const p = document.createElement('p');
                 p.textContent = text;
                 featuresList.appendChild(p);
             });
-
             const button=document.createElement('div')
             button.classList='btn_cont'
             const link=document.createElement('a')
             link.href=url;
             link.textContent='Buy Now'
             link.classList='btn'
- 
             button.appendChild(link)
+
+            const span_con=document.createElement('div')
+            span_con.classList='span_con'
+            const span=document.createElement('a')
+
+            span.href=Video
+            span.textContent='Mod Preview'
+            span_con.appendChild(span)
+
 
             productDiv.appendChild(imageDiv);
             productDiv.appendChild(featuresList);
+            productDiv.appendChild(span_con)
             productDiv.appendChild(button);
-
             const container = document.querySelector('.pro_container');
             container.appendChild(productDiv);
         }
 
-data.map(items=>addProduct(items.imgsrc,items.features))
+data.map(items=>addProduct(items.imgsrc,items.features,items.Video))
 
 let observer;
 try{
